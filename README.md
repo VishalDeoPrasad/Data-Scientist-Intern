@@ -34,3 +34,59 @@ to take out the data from HDFS we need to use
 DA, ML, DL, NLP, CV, LLM
 Spark
 Cloud
+
+#### from where data can be generated
+1. IOT sensor
+1. Google Form
+1. Web Scrapping
+1. more...
+
+#### How to analyse and handle the big data
+1. Map Reduce
+2. Apache Spark
+
+#### How to extract the data from HDFS
+1. ApacheSQOOP
+2. Apache Flume
+
+#### Data Warehouse
+1. AWS Redshift
+1. Snowflack
+
+#### dependence management(orchastrating)
+1. Apache Airflow
+
+#### Tools to take out data from data warehouse
+1. SQL
+
+Date - 13-02-2024
+## Advance Stats DA
+1. Descriptive Stats
+   def : help us to describe the historial data.
+   - Allow us to build reports(Summary of data)
+   - Visulization
+   - help to build Visual Dashboard
+
+2. Infrential Stats
+   - Estimation, appoximation
+   Q. need of estimation and approximating something
+   + A. Data collection is very expensive so we estimate the data
+   + example 1: What is avg age of an indian citizen?(pandas, spark can easly find the mean)
+   + example 2: total population of india just an estimate. 
+   becz counting all people is very difficult
+
+
+
+### sampling
+- if you don't have enough money to collect the data we do sampling.
+- we randomly collecting the data.
+- it is not possible to collect the data of 1.4 billion of data, it is depend upon the budget of the company.
+
+Q. what is the avg salary of the population?
+Q. what is the avg age of the populaiton?
+- do a data collection at very small scale becz
+   + time consuming
+   + collecting data is very expensive.
+
+
+
