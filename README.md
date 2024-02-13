@@ -89,4 +89,6 @@ Q. what is the avg age of the populaiton?
    + collecting data is very expensive.
 
 
-
+### Estimation
+- Point estimation - not so good 
+- **Central limit theorum** is use to estimate, or make better inference/apporximation/estimation on the entire population using a small random sample.
