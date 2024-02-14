@@ -61,13 +61,14 @@ Cloud
 
 Date - 13-02-2024
 ## Advance Stats DA
-1. Descriptive Stats
+1. __Descriptive Stats__
    def : help us to describe the historial data.
    - Allow us to build reports(Summary of data)
    - Visulization
    - help to build Visual Dashboard
+   - enemy: missing value, outliers
 
-2. Infrential Stats
+2. __Infrential Stats__
    - Estimation, appoximation
    Q. need of estimation and approximating something
    + A. Data collection is very expensive so we estimate the data
@@ -75,9 +76,15 @@ Date - 13-02-2024
    + example 2: total population of india just an estimate. 
    becz counting all people is very difficult
 
-
+### Population 
+   - collection of data
+   - example- age of all the indian citizen
 
 ### sampling
+- what is good sample?
+   + low bias, random, varity.
+- 
+- subset of population, which represent the entire population.
 - if you don't have enough money to collect the data we do sampling.
 - we randomly collecting the data.
 - it is not possible to collect the data of 1.4 billion of data, it is depend upon the budget of the company.
@@ -88,7 +95,33 @@ Q. what is the avg age of the populaiton?
    + time consuming
    + collecting data is very expensive.
 
+### Good Sampling Techinque
+   1. **Uniform random sampling**:
+      + it is randomly picking data points, giving equal chance to each and every data points.
+      + in  case of salary, bias will come because of outliers.(there is sampling bias)
+
+### Estimate can be corrupted:
+1. wrong sampling techinque
+1. sample contains outliers
+1. sample size is not large enought
+
+### samples mean
+![Alt text](image-1.png)
+step to computer
+1. pick 'm' sample of size 'n'
+2. computer avg of each samples
+3. we will end up getting, sampling distribution of samples mean.
 
 ### Estimation
-- Point estimation - not so good 
-- **Central limit theorum** is use to estimate, or make better inference/apporximation/estimation on the entire population using a small random sample.
+- **1. Point estimation** - not so good 
+- **2. Central limit theorum** is use to estimate, or make better inference/apporximation/estimation on the entire population using a small random sample.
+
+### conculsion of central limit theorum
+- Normal distribution with mean and standard deviation
+- samples mean(X) = poplulaiton mean
+- ![Alt text](image-2.png)
+
+> Sampling distributin follow the Normal distribution/Gaussain, there are 3 observation, learn it.
+
+> Q. What is the avg height of gorilla? <br> 
+ans - take sample and find it average
