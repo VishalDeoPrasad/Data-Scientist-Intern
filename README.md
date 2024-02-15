@@ -116,7 +116,14 @@ step to computer
 - **1. Point estimation** - not so good 
 - **2. Central limit theorum** is use to estimate, or make better inference/apporximation/estimation on the entire population using a small random sample.
 
-### conculsion of central limit theorum
+### central limit theorum
+   + find out point estimation of multiple
+    sample
+   + We take differnt samples from population and find out the average.
+### Conculsion of central limit theorum
+- more the data better is the estimate
+- x-bar follow normal distribution.
+- sampling distiributiion average is approxtly similar to mean of the population
 - Normal distribution with mean and standard deviation
 - samples mean(X) = poplulaiton mean
 - ![Alt text](image-2.png)
@@ -125,3 +132,65 @@ step to computer
 
 > Q. What is the avg height of gorilla? <br> 
 ans - take sample and find it average
+
+### to make sure if the data is follow normal discribution.
+![Alt text](image-3.png)
+- we can tranform the any distribution to the normal distribution using
+
+### Implement CLT on this data using python
+```python
+sns.histplot(population_df['age'], kde=True)
+print('Number of rows: ', population_df.shape[0])
+print('Population Mean: ', population_df['age'].mean())
+```
+![Alt text](image-5.png)
+![Alt text](image-4.png)
+
+```python
+def sampling_distribution(data, sample_size, number_of_sample):
+    sample_means = []
+    for m in range(number_of_sample):
+        sample = data.sample(n=sample_size)
+        sample_means.append((sample_size, sample.mean()))
+    sampling_distribution_df = pd.DataFrame(sample_means, columns=['n', 'mean'])
+
+    print("*"*20, " R E P O R T ", "*"*20)
+    print("Mean Check")
+    print("Sampling Distribution Mean:", sampling_distribution_df["mean"].mean())
+    print("Population Mean: ", data.mean())
+
+    print()
+    print("Standard Deviation Check")
+    print("Sampling Distribution Std:", sampling_distribution_df["mean"].std())
+    print("Population Std / (sample_size)**0.5:", data.std()/np.sqrt(sample_size))
+
+    print("*"*55)
+    
+    return sampling_distribution_df
+```
+
+```python
+def sampling_distribution_plot(data):
+   fig, axes = plt.subplots(1, 2, figsize=(8, 3), constrained_layout=True)
+   
+   axes[0].set_title("Sampling Distribution")  # Add a title to the axes
+   axes[0].set_xlabel('Mean')  # Add an x-label to the axes
+   axes[0].set_ylabel('Density')  # Add a y-label to the axes
+
+   sns.histplot(data, kde=True, ax=axes[0])
+   
+   stats.probplot(data, dist=stats.norm, plot=axes[1])
+   axes[1].grid()
+   
+   plt.show()
+```
+
+```python
+n=50
+m=100
+
+sampling_distribution_df = sampling_distribution(data=population_df['age'], sample_size=n, number_of_sample=m)
+
+sampling_distribution_plot(data=sampling_distribution_df["mean"])
+```
+![Alt text](image-6.png)
