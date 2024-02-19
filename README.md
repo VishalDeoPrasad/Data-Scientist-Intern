@@ -236,3 +236,29 @@ find out the address of the server, using url.
 DNS know store all the website address.
 it is like phone book directly, which contain, url and IP Address associated with it.
 ```
+
+### what is server?
+```
+It is a computer, that can serve multiple request at a time.
+It has RAM, MEMORY, and CPU.
+```
+
+### what is the difference between in client machine and server machine?
+```
+Server Machine is faster then our personal computer(client machine).
+Bigger CPU, Bigger RAM, Bigger Processing, so these server product lot of heat
+```
+
+### help us to build Application server:
+- Flask, Django, FastAPI using python
+
+### help us to build Web page
+- HTML, CSS, JS
+
+![Alt text](image-10.png)
+- FTP: send file, data
+- SFTP: send large data
+- SMTP: send email
+- HTTP: text tranfer protocall, transfering the text, not secure
+- HTTPs: send text file securly
+in order to communicate and send  data you need one of the protocal.
