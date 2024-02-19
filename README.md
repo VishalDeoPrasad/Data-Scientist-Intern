@@ -223,3 +223,16 @@ One-Sample t-test: Tests whether the mean of a single sample is significantly di
 
 
 
+# Web Application Development
+![Alt text](image-8.png)
+
+
+### Client Server Architecture/ Request Respose Architecture
+![Alt text](image-9.png)
+
+### DNS Server
+```
+find out the address of the server, using url.
+DNS know store all the website address.
+it is like phone book directly, which contain, url and IP Address associated with it.
+```
