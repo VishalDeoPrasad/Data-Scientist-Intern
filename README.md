@@ -262,3 +262,16 @@ Bigger CPU, Bigger RAM, Bigger Processing, so these server product lot of heat
 - HTTP: text tranfer protocall, transfering the text, not secure
 - HTTPs: send text file securly
 in order to communicate and send  data you need one of the protocal.
+
+
+### Response-Status Code
+![Alt text](image-11.png)
+
+![Alt text](image-12.png)
+
+### How to make request uisng Python
+![Alt text](image-13.png)
+
+### Create our own server(Apllication server & DB)
+![Alt text](image-14.png)
+
