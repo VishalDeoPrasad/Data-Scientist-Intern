@@ -275,3 +275,29 @@ in order to communicate and send  data you need one of the protocal.
 ### Create our own server(Apllication server & DB)
 ![Alt text](image-14.png)
 
+### create virtual environment
+1. __Create__ : python -m venv .env_flask_day_2 
+2. __activate__ : .env_flask_day_2\Scripts\activate
+3. __Check all dependency__ : pip list
+4. __install Dependency__ : Flask, Pandas, Numpy, Matplotlib 
+
+### Flask
+```python
+# this is application program
+from flask import Flask
+app = Flask(__name__) #intilize the flask object
+
+# by default get request
+@app.route('/', methods=['Post']) #crate a route/endpoint and bind to some function
+def index():
+    return "Welcome to this application"
+
+@app.route('/about')
+def about():
+    return "This is about Page"
+
+if __name__ == '__main__':
+    app.run()
+```
+
+#### Get Resquest
