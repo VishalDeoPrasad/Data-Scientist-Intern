@@ -280,6 +280,7 @@ in order to communicate and send  data you need one of the protocal.
 2. __activate__ : .env_flask_day_2\Scripts\activate
 3. __Check all dependency__ : pip list
 4. __install Dependency__ : Flask, Pandas, Numpy, Matplotlib 
+5. __deactivate__ : .env_flask_day_2\Scripts\deactivate
 
 ### Flask
 ```python
@@ -301,3 +302,39 @@ if __name__ == '__main__':
 ```
 
 #### Get Resquest
+
+### Sending Varible data between client and server
+- 127.0.0.1:5000/add?a=6&b=10
+- capture the varible from url and send it to endpoint bind function.
+
+```python
+from flask import Flask, request
+
+@app.route('/magic')
+def add_fun():
+   var_1 = int(request.args.get('a'))
+   var_2 = int(request.args.get('b'))
+   return str(var_1+var_2)
+```
+
+### Send HTML instade of string
+```python
+from flask import Flask, render_template
+app = Flask(__name__) #intilize the flask object
+
+@app.route('/') #crate a route/endpoint and bind to some function
+def index():
+    return render_template("home_page.html")
+```
+
+### HTML
+```
+- HTML is not a programming language.
+- define a way of formating & structuring content.
+- Two type of HTML Tag
+   - Self-closing tage
+   - Tags with closing tags
+```
+![Alt text](image-15.png)
+![Alt text](image-16.png)
+
