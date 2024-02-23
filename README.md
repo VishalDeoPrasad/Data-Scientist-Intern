@@ -334,7 +334,57 @@ def index():
 - Two type of HTML Tag
    - Self-closing tage
    - Tags with closing tags
+- HTML start with Doctype
+- Tag having Attributes:
+   + Input Attributes: help the client to take user input
+      <input type = " ">
+         1. Button
+         2. Text
+         3. Date
+         4. Email
+         5. Number
+         6. more...
 ```
 ![Alt text](image-15.png)
 ![Alt text](image-16.png)
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> Welcome to the home page. hope to see you again very soon.</p>
+</body>
+</html>
+```
+
+form tage help us to send data from client to server.
+form tag attributes:
+   1. Action: action to performed when click be performed.
+   2. Method: Post, help to secure the email, & password.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Welcome to the home page.</h1>
+    <p>hope to see you again very soon.</p>
+
+    <form action="/magic">
+        <input type="text" name="a"> <br>
+        <input type="text" name="b">
+        <input type="submit">
+    </form>
+    
+</body>
+</html>
+```
