@@ -379,6 +379,7 @@ form tag attributes:
     <h1> Welcome to the home page.</h1>
     <p>hope to see you again very soon.</p>
 
+   <!-- Data hidden in this request, do not send data using get method because it is hightly insecure, use Post to send the data-->
     <form action="/magic">
         <input type="text" name="a"> <br>
         <input type="text" name="b">
@@ -387,4 +388,72 @@ form tag attributes:
     
 </body>
 </html>
+```
+
+### API for calculator
+```html
+<form action="/magic" method="get">
+      <input type="text" name="a" placeholder="Enter First Number"> <br> <br>
+      <input type="text" name="b" placeholder="Enter Second Number" > <br> <br>
+      <input type="submit" value="Add">
+   </form>
+```
+
+```python
+@app.route('/calculator', methods=['get'])
+def cal():
+    return render_template("input_page.html")
+
+@app.route('/magic', methods=['get'])
+def add_fun():
+    var_1 = int(request.args.get('a'))
+    var_2 = int(request.args.get('b'))
+    sum = var_1 + var_2
+    return str(sum)
+```
+
+### API for Login
+```html
+<form action="/save_login" method="POST">
+        <input type="email" name="email" placeholder="Enter Email"> <br> <br> 
+        <input type="password" name="password" placeholder="Enter password"> <br> <br>
+        <input type="submit" value="Login">
+   </form>
+```
+
+```python
+@app.route('/login')
+def log():
+    return render_template("login.html")
+
+@app.route('/save_login', methods=['POST'])
+def save_cred():
+    email = request.form.get('email')
+    password = request.form.get('password')
+    cred = email+" "+password
+    return cred
+```
+
+### if else condition on HTML
+```html
+{% if uage >= 18 %}
+    <h1>Thanks for registering {{ uname}}</h1>
+{% else %}
+    <h1>Please go home kid</h1>
+{% endif %}
+```
+### for loop on HTML
+```html
+<ul>
+    {% for note in notes %}
+        <li>{{ note }}</li>
+    {% endfor %}
+    </ul>
+```
+
+### Create dynamic route
+```python
+@app.route("/in/<user_name>)
+def user_profile(user_name):
+    return rander_templates("thankyou.html", uname=user_name)
 ```
