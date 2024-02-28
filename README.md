@@ -457,3 +457,67 @@ def save_cred():
 def user_profile(user_name):
     return rander_templates("thankyou.html", uname=user_name)
 ```
+
+### How to create an app?
+step-by-step
+ 1. install python
+ 1. create a venv
+ 1. download & install all the project dependency
+    - pip install -r requirment.txt
+ 1. crate a python project
+ 1. run & test the project
+    * python app.py
+    - run on localhost
+    - run on local area net
+ 1. deploy the application on AWS 
+
+### Step to deploy on AWS:
+1. AWS --> Crate an account
+1. Rent a server(EC2) --> Configration(RAM, Storage, CPU, OS)
+    * based on the configration you will get the bill/price
+    * example: 1bhk vs 3bhk price
+    * not EBS(Paas)
+1. Transfer the project from local to AWS server
+    * `SCP - Secure copy protocol`
+1. configure the server:
+    `remotly access the computer using SSH(secure shell).`
+    1. install python
+    1. install depedencies
+    1. Run the applicaton
+```
+I lost 8000 to aws. So use carefully😅: 
+note : I had a college project, where I had to create a private ec2  in a private vpn. And connect the vpn to my computer over a private network using client end point. My instructor, everything was covered within free tier. But client end point which I used to connect my computer to private vpn was not part of free tier.
+```
+![Alt text](image-17.png)
+
+Soluction: Rent a server
+example: opening a pizza store at start
+Cloud service:
+- Virtual for us and physical for them
+1. Amazon(AWS) --> services, EC2(Iaas), EBS(Paas)
+1. Google(GCP)
+1. Microsoft(Azure)
+
+They provide service in 3 format
+1. SAAS(software as an service) --> Google Docs, Colab, Drive
+2. IAAS(interface as an service) --> AWS EC2
+3. PAAS(platform as an service) --> AWS EBS
+
+EBS vs EC2
+![Alt text](image-18.png)
+
+
+1. ![Alt text](image-19.png)
+
+2. ![Alt text](image-20.png)
+
+3. ![Alt text](image-21.png)
+
+4. ![Alt text](image-22.png)
+
+![Alt text](image-23.png)
+
+security: to everybody come and see the website
+![Alt text](image-24.png)
+
+Network Interface
