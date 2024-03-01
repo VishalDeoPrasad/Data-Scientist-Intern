@@ -506,18 +506,70 @@ They provide service in 3 format
 EBS vs EC2
 ![Alt text](image-18.png)
 
-
+step0: signup account
+setup EC2 insance(rent a server)
+step1 : Launch an instance
 1. ![Alt text](image-19.png)
 
+step :
 2. ![Alt text](image-20.png)
 
-3. ![Alt text](image-21.png)
+step 3: instance type
 
-4. ![Alt text](image-22.png)
+step 4: key pair
+ ![Alt text](image-21.png)
 
-![Alt text](image-23.png)
+step 5: lauch instance
 
-security: to everybody come and see the website
+ ![Alt text](image-22.png)
+
+step 6: security: to everybody come and see the website
 ![Alt text](image-24.png)
 
-Network Interface
+step 6.1: inbound: link the security 
+
+step 7: Network Interface
+![alt text](image-25.png)
+
+![alt text](image-26.png)
+
+![alt text](image-27.png)
+
+![alt text](image-28.png)
+
+scp -r -i 'key' PATH REMOTE-SERVER:~/
+
+pip freeze > requirement.txt
+
+#### To copy the file
+1. `scp -i "flask_deployment_jan_internship_24.pem" -r webapp ubuntu@ec2-3-26-70-119.ap-southeast-2.compute.amazonaws.com:~/`
+
+#### to start the server
+1. `ssh -i "flask_deployment_jan_internship_24.pem" ubuntu@ec2-3-26-70-119.ap-southeast-2.compute.amazonaws.com`
+
+#### install dependency
+1. `sudo apt update` 
+1. `sudo apt upgrade`
+1. `sudo apt install python3-pip`
+1. `pip install -r requirement.txt`
+
+### run the program in the background
+1. no hang-up:  `nohup python3 app.py &` or `nohup python3 app.py` <br>
+
+### to see the running program
+* `top -u $USER`
+
+### stop the running program
+kill <Process ID(PID)>: 
+1. `kill 1377` nomally kill 
+1. `kill -9 1377` forcefully kill
+
+
+
+
+
+
+
+revanth christober
+![alt text](image-29.png)
+
