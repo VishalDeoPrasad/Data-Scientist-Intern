@@ -484,10 +484,7 @@ step-by-step
     1. install python
     1. install depedencies
     1. Run the applicaton
-```
-I lost 8000 to aws. So use carefully😅: 
-note : I had a college project, where I had to create a private ec2  in a private vpn. And connect the vpn to my computer over a private network using client end point. My instructor, everything was covered within free tier. But client end point which I used to connect my computer to private vpn was not part of free tier.
-```
+
 ![Alt text](image\image-17.png)
 
 Soluction: Rent a server
@@ -505,21 +502,6 @@ They provide service in 3 format
 
 EBS vs EC2
 ![Alt text](image\image-18.png)
-
-
-pip freeze > requirement.txt
-
-#### To copy the file
-1. `scp -i "flask_deployment_jan_internship_24.pem" -r webapp ubuntu@ec2-3-26-70-119.ap-southeast-2.compute.amazonaws.com:~/`
-
-#### to start the server
-1. `ssh -i "flask_deployment_jan_internship_24.pem" ubuntu@ec2-3-26-70-119.ap-southeast-2.compute.amazonaws.com`
-
-#### install dependency
-1. `sudo apt update` 
-1. `sudo apt upgrade`
-1. `sudo apt install python3-pip`
-1. `pip install -r requirement.txt`
 
 revanth christober
 ![alt text](image\image-29.png)
@@ -631,4 +613,36 @@ no hang-up:
 kill <Process ID(PID)>: 
     - `kill 1377` nomally kill 
     - `kill -9 1377` forcefully kill
-image\
+
+
+## Machine Learning
+`mathematical representation of a relationship between between input and output`
+![alt text](BD0B08C5-2462-40CD-81A9-E560494DBE05.png)
+
+### Supervised Learning Algorithm
+#### 1. Regression Problem
+1. Linear Regression
+1. SVM
+
+#### 2. Classification Problem
+1. Logistic Regression
+1. SVM
+
+### Unsupervised Learning Algorithm
+#### 1. Clustring
+1. k-mean
+1. k-mean+
+1. H clustering: `Agglormartic clustring`
+1. DB Scan(density based clustring): `also use for outliers`
+1. GMM (Gaussian mixture models)
+1. CDN (deep learning based clustring approch)
+
+#### 2. Dimentationlity Reduction
+1. PCA
+1. t-sna
+1. Probabality based approch
+1. Auto encoders
+
+#### 3. ARM Task (association rule mining Task)
+
+#### 4 . Recommandation system
