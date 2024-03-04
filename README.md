@@ -106,7 +106,7 @@ Q. what is the avg age of the populaiton?
 1. sample size is not large enought
 
 ### samples mean
-![Alt text](image-1.png)
+![Alt text](image\image-1.png)
 step to computer
 1. pick 'm' sample of size 'n'
 2. computer avg of each samples
@@ -126,7 +126,7 @@ step to computer
 - sampling distiributiion average is approxtly similar to mean of the population
 - Normal distribution with mean and standard deviation
 - samples mean(X) = poplulaiton mean
-- ![Alt text](image-2.png)
+- ![Alt text](image\image-2.png)
 
 > Sampling distributin follow the Normal distribution/Gaussain, there are 3 observation, learn it.
 
@@ -134,7 +134,7 @@ step to computer
 ans - take sample and find it average
 
 ### to make sure if the data is follow normal discribution.
-![Alt text](image-3.png)
+![Alt text](image\image-3.png)
 - we can tranform the any distribution to the normal distribution using
 
 ### Implement CLT on this data using python
@@ -143,8 +143,8 @@ sns.histplot(population_df['age'], kde=True)
 print('Number of rows: ', population_df.shape[0])
 print('Population Mean: ', population_df['age'].mean())
 ```
-![Alt text](image-5.png)
-![Alt text](image-4.png)
+![Alt text](image\image-5.png)
+![Alt text](image\image-4.png)
 
 ```python
 def sampling_distribution(data, sample_size, number_of_sample):
@@ -193,11 +193,11 @@ sampling_distribution_df = sampling_distribution(data=population_df['age'], samp
 
 sampling_distribution_plot(data=sampling_distribution_df["mean"])
 ```
-![Alt text](image-6.png)
+![Alt text](image\image-6.png)
 
 
 ### Statistical Test in Python
-![Alt text](image-7.png)
+![Alt text](image\image-7.png)
 link - https://github.com/bansalkanav/Machine_Learning_and_Deep_Learning/blob/master/Module%203%20-%20Advance%20Data%20Analysis%20and%20Statistics/6.%20Performing%20Statistical%20Test/statistical_test_practical_implementation.ipynb
 Important Hypothesis Tests
 There are many hypothesis tests. Here is a list of few most important tests:
@@ -224,11 +224,11 @@ One-Sample t-test: Tests whether the mean of a single sample is significantly di
 
 
 # Web Application Development
-![Alt text](image-8.png)
+![Alt text](image\image-8.png)
 
 
 ### Client Server Architecture/ Request Respose Architecture
-![Alt text](image-9.png)
+![Alt text](image\image-9.png)
 
 ### DNS Server
 ```
@@ -255,7 +255,7 @@ Bigger CPU, Bigger RAM, Bigger Processing, so these server product lot of heat
 ### help us to build Web page
 - HTML, CSS, JS
 
-![Alt text](image-10.png)
+![Alt text](image\image-10.png)
 - FTP: send file, data
 - SFTP: send large data
 - SMTP: send email
@@ -265,15 +265,15 @@ in order to communicate and send  data you need one of the protocal.
 
 
 ### Response-Status Code
-![Alt text](image-11.png)
+![Alt text](image\image-11.png)
 
-![Alt text](image-12.png)
+![Alt text](image\image-12.png)
 
 ### How to make request uisng Python
-![Alt text](image-13.png)
+![Alt text](image\image-13.png)
 
 ### Create our own server(Apllication server & DB)
-![Alt text](image-14.png)
+![Alt text](image\image-14.png)
 
 ### create virtual environment
 1. __Create__ : python -m venv .env_flask_day_2 
@@ -345,8 +345,8 @@ def index():
          5. Number
          6. more...
 ```
-![Alt text](image-15.png)
-![Alt text](image-16.png)
+![Alt text](image\image-15.png)
+![Alt text](image\image-16.png)
 
 ```html
 <!DOCTYPE html>
@@ -457,7 +457,7 @@ def save_cred():
 def user_profile(user_name):
     return rander_templates("thankyou.html", uname=user_name)
 ```
-
+# AWS Cloud
 ### How to create an app?
 step-by-step
  1. install python
@@ -488,7 +488,7 @@ step-by-step
 I lost 8000 to aws. So use carefully😅: 
 note : I had a college project, where I had to create a private ec2  in a private vpn. And connect the vpn to my computer over a private network using client end point. My instructor, everything was covered within free tier. But client end point which I used to connect my computer to private vpn was not part of free tier.
 ```
-![Alt text](image-17.png)
+![Alt text](image\image-17.png)
 
 Soluction: Rent a server
 example: opening a pizza store at start
@@ -504,40 +504,8 @@ They provide service in 3 format
 3. PAAS(platform as an service) --> AWS EBS
 
 EBS vs EC2
-![Alt text](image-18.png)
+![Alt text](image\image-18.png)
 
-step0: signup account
-setup EC2 insance(rent a server)
-step1 : Launch an instance
-1. ![Alt text](image-19.png)
-
-step :
-2. ![Alt text](image-20.png)
-
-step 3: instance type
-
-step 4: key pair
- ![Alt text](image-21.png)
-
-step 5: lauch instance
-
- ![Alt text](image-22.png)
-
-step 6: security: to everybody come and see the website
-![Alt text](image-24.png)
-
-step 6.1: inbound: link the security 
-
-step 7: Network Interface
-![alt text](image-25.png)
-
-![alt text](image-26.png)
-
-![alt text](image-27.png)
-
-![alt text](image-28.png)
-
-scp -r -i 'key' PATH REMOTE-SERVER:~/
 
 pip freeze > requirement.txt
 
@@ -553,23 +521,117 @@ pip freeze > requirement.txt
 1. `sudo apt install python3-pip`
 1. `pip install -r requirement.txt`
 
-### run the program in the background
-1. no hang-up:  `nohup python3 app.py &` or `nohup python3 app.py` <br>
-
-### to see the running program
-* `top -u $USER`
-
-### stop the running program
-kill <Process ID(PID)>: 
-1. `kill 1377` nomally kill 
-1. `kill -9 1377` forcefully kill
-
-
-
-
-
-
-
 revanth christober
-![alt text](image-29.png)
+![alt text](image\image-29.png)
 
+
+
+
+## Create AWS EC2 Instance
+Step 1: Launch an Instance
+![alt text](image\image-31.png)
+
+Step 2: Name and tags
+![alt text](image\image-32.png)
+
+Step 3: Select OS images
+![alt text](image\image-33.png)
+
+Step 4: instance type
+![alt text](image\image-34.png)
+
+Step 5: key pair; to connect to our local system we need some key. connection type `SCP`, `SSH`.
+`create public private key`
+![alt text](image\image-35.png)
+
+![alt text](image\image-36.png)
+
+Step 6: Click on Launch Instance
+![alt text](image\image-37.png)
+
+Step 7: EC2 instace created
+![alt text](image\image-38.png)
+
+Step 8: go to instance
+![alt text](image\image-39.png) <br>
+![alt text](image\image-40.png) <br>
+![alt text](image\image-41.png) <br>
+
+Step 9: Secure the server, lot of people are comming to my server, and we are allow the person who is coming to my server. 
+![alt text](image\image-42.png)
+![alt text](image\image-43.png)
+![alt text](image\image-44.png)
+![alt text](image\image-45.png)
+![alt text](image\image-46.png)
+![alt text](image\image-47.png)
+
+Step 10: Add this `anywhere` secuity groups on my network interface.
+![alt text](image\image-48.png)
+![alt text](image\image-49.png)
+![alt text](image\image-50.png)
+
+Different services of AWS
+1. **Amazon SageMaker**: it is used to build, train and deploy mechine learning models.
+2. **s3**- storage in clound
+3. **RDS** - Managed Relational Database Service
+4. **RedShift** - Fast, simple, cost-effective Data Warehousing.
+5. **Athena** - Serverless interactive analytics service, all you EDA everything done on athena instead of using you systems
+6. **EC2**- we are learning this
+
+## Hosting the web app on AWS
+Step 1: Connect to instance
+![alt text](image\image-51.png)
+![alt text](image\image-52.png)
+
+Step2: Go to app folder and start `CMD`
+![alt text](image\image-53.png)
+![alt text](image\image-54.png)
+
+Step 3: `SSH` - use the key and enter into server <br>
+`SSH -i 'key' REMOTE_SERVER`
+![alt text](image\image-55.png)
+![alt text](image\image-56.png)
+![alt text](image\image-57.png)
+
+step 4: copy all templates and app file to single folder.
+![alt text](image\image-58.png)
+
+step 5: create dependecy text file
+![alt text](image\image-59.png)
+![alt text](image\image-60.png)
+
+Step 6: Transfer the templates and app. `SCP`: secure copy using key. `no need of transfering 'env' and 'key'` <br>
+`scp -r -i 'key' REMOTE-SERVER:~/`
+![alt text](image\image-28.png)
+__cmd:__ `scp -r -i "flask_deployment_jan_internship_24.pem" webapp ubuntu@ec2-3-83-244-219.compute-1.amazonaws.com:~/`
+![alt text](image\image-62.png)
+![alt text](image\image-63.png)
+
+Step 7 : Login to server and verify the copying. <br>
+__cmd__: `ssh -i "flask_deployment_jan_internship_24_key.pem" ubuntu@ec2-3-83-244-219.compute-1.amazonaws.com`
+![alt text](image\image-64.png)
+
+Step 8: Update OS and install dependency 
+1. `sudo apt update`: download all package
+2. `sudo apt upgrade`: install all package
+3. `sudo apt install python3`: install python3
+4. `sudo apt install python3-pip`: install pip
+
+step 9: Run and test the application
+1. fix code 
+    ```python
+    app.run(host='0.0.0.0', port=5000)
+    ```
+2. go to instance and find public ip:
+![alt text](image\image-65.png)
+3. run the program in the background
+no hang-up: 
+    - `python3 app.py` : hang-up
+    - `nohup python3 app.py &` : provide terminal use
+    - `nohup python3 app.py` <br>
+4. to see the running program `top -u $USER`
+5. stop the running program
+kill <Process ID(PID)>: 
+    - `kill 1377` nomally kill 
+    - `kill -9 1377` forcefully kill
+image\
