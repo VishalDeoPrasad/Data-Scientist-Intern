@@ -524,9 +524,6 @@ pip freeze > requirement.txt
 revanth christober
 ![alt text](image\image-29.png)
 
-
-
-
 ## Create AWS EC2 Instance
 Step 1: Launch an Instance
 ![alt text](image\image-31.png)
