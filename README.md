@@ -615,9 +615,28 @@ kill <Process ID(PID)>:
     - `kill -9 1377` forcefully kill
 
 
-## Machine Learning
-`mathematical representation of a relationship between between input and output`
+# Machine Learning
+`mathematical representation of a relationship between between input and output` 
 ![alt text](BD0B08C5-2462-40CD-81A9-E560494DBE05.png)
+
+Agenda <br>
+`1. Overview` <br>
+`2. Data Preparation` <br>
+`3. Building a model` <br>
+`4. Evaluation ` <br>
+`5. more ..`
+
+#### Pattern
+`Mathematical relationship between input and output`
+#### What is Machine learning?
+`Algothrim map the relationship between input and output`
+
+Q. if it is fail to map relationship between the x and y then what happen?
+A. if the model is not gernerating better prediction then either data has problem or algorithm has problem.
+
+
+#### We can not say whatever our model is prediction is not 100% correct.
+`that is why we need to 'evaluation' the model `
 
 ### Supervised Learning Algorithm
 #### 1. Regression Problem
@@ -627,6 +646,9 @@ kill <Process ID(PID)>:
 #### 2. Classification Problem
 1. Logistic Regression
 1. SVM
+
+![alt text](image.png)
+
 
 ### Unsupervised Learning Algorithm
 #### 1. Clustring
@@ -645,4 +667,17 @@ kill <Process ID(PID)>:
 
 #### 3. ARM Task (association rule mining Task)
 
-#### 4 . Recommandation system
+#### 4. Recommandation system
+
+#### how we will be knowing that it is a bad model.
+not good answer
+1. training score and test score
+1. low accuracy
+1. high error
+
+goood answer
+1. train score and test score
+1. train accuracy and test accuracy
+
+![alt text](image-1.png)
+
