@@ -679,5 +679,69 @@ goood answer
 1. train score and test score
 1. train accuracy and test accuracy
 
+example : mock test vs acutal test
+
 ![alt text](image-1.png)
+
+#### Q. if the model output is verybed? give me resason?
+1. `Change the alogorithm`
+2. `chnage the data preprocessing`
+
+#### Q. How you determine if the model is good or bed?
+1. train score and test score
+![alt text](image-2.png)
+overfit- `good at training and bed at testing` <br>
+underfit(no learning) - `bed on training, good on testing` <br>
+best fit - `perform well in test and train`
+
+#### Q. what to ask if a problem statement is thrown at you?
+`Given a loan applicaiton predict if the application is approv or rejected` <br>
+bank ask the following question
+1. cibil score
+1. salary
+1. asset
+1. 6 salary slip
+
+note: must have `low false postive and false negative` <br>
+question to bank: do you have the data
+![alt text](image-3.png)
+
+#### Q. Can you create the spam detection?
+`Question should be ask like, what is the input and output`
+
+
+### villion of ml model
+- missing value
+- outliers
+
+### EDA helps us alot in ML:
+1. help to find the outlier
+1. missing value
+1. insight
+1. Recommandation
+
+Agenda 
+![alt text](image-5.png)
+
+### data preperation/preprocessing
+1. clean the data
+1. Numerical feature extraction   
+    - tfidf vectorizier ,word2vec,glove algorithm
+1. One-hot encoding and label encoding
+![alt text](image-4.png)
+
+### Vectorization technique for text data
+1. Bow
+2. Tf-idf
+3. Word2vic
+4. Glove
+5. Fast Text
+6. RNN/LSTM/GRUs (it do the preprocessing automatically)
+7. ELM
+8. Transformer (LLM) 
+    - ChatGPT(T for Transformers)
+    - Bert(T for Transformers)
+
+
+
 
