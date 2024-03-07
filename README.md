@@ -743,5 +743,46 @@ Agenda
     - Bert(T for Transformers)
 
 
+Note: PCA need scaling to give the data
 
+#### if the y is categorica we can not evalute model using 
+1. RMSE, R2
+1. ACC, Confusion Metrix, f1 score,  recall, precision
 
+#### how to start with project when you get the data
+1. indentify the input and output
+    - find the classifiction or regression problem
+    - find suitable algothrim for you data
+2. split the data
+3. data preprocessing on train data
+4. data preprocessing on test data
+![alt text](image-6.png)
+5. Model building on train data
+6. Evaluate on train data(mock test)
+    - if train score is very low then then change the algo or preprocess the data
+    - either algo or data preprocessing have the problem
+7. Evaluation on test data(final data)
+8. use evaluation metrices 
+    - if the problem is regession- use the regession evalution metrics
+    - for example- RMSE, R2
+    - if the problem is classificion- use the classificition evalution metrics
+    - for example, acc, f1-score, precesion, 
+
+#### Data leakage
+1. split the data the first then do the preprocessing
+1. the algorithm should never look at data
+1. so data leakage will always lead to overfitting
+
+![alt text](image-7.png)
+
+![alt text](image-8.png)
+
+### BOW
+- vectrization if feature extraction 
+- don't have sequence
+- Glove and Word2Vec has capacity of handle the seuqence
+- Q. where is apply which vectorization method
+Vectrization- taking the data in text format and convrting to numerical value
+![alt text](image-9.png)
+
+###
