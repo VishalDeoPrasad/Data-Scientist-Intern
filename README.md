@@ -767,6 +767,8 @@ Note: PCA need scaling to give the data
     - for example- RMSE, R2
     - if the problem is classificion- use the classificition evalution metrics
     - for example, acc, f1-score, precesion, 
+    - sklearn, evaluation metrics
+    - tensorflow- evaluation metrices
 
 #### Data leakage
 1. split the data the first then do the preprocessing
@@ -785,4 +787,39 @@ Note: PCA need scaling to give the data
 Vectrization- taking the data in text format and convrting to numerical value
 ![alt text](image-9.png)
 
-###
+### Coming up
+![alt text](image-10.png)
+
+# MLops
+https://github.com/bansalkanav/Machine_Learning_and_Deep_Learning/tree/master/Module%205%20-%20MLOPs
+### Build an email spam Ham classifier
+Q. Question that we should ask when we get the ML task
+A. What is input and Output
+
+Step 1: `Input/output`find out what type of task.
+   * identify x & y for given dataframe
+Step 2: `Split data into train and test`
+Step 3: `Data Preprocessing on training data`: clearn the data
+Step 4: `Data Preprocessing on test data`: clearn the data
+Step 5: `Feature extraction On training data`
+   * BOW - fail because of sparse matrix(use PCA, to cvt to dense)
+   * TF-if - fail because of sparse matrix(use PCA, to cvt to dense)
+   * Glove
+   * BERT
+Step 6: `Feature extraction On test data`
+Step 7: `Model selection and Building`: choose correct algorithm for you task
+   * KNN
+   * DT
+   * Random Forest 
+   * SVM
+Step 8: `Train the model using train data`
+Step 9: `Evaluate the model using text data`: since it is classifiction problem we will choose
+   * Accuracy
+   * F1-Score
+   * Precision
+   * Recall
+Step 10: `Hyperparameter tuning`: use to improve the model accuracy
+Step 11: `Pipeline Creation`: STep by step process
+   * help Optimze the hyperparmeters tuning workflow
+
+Notebook link: https://github.com/bansalkanav/Machine_Learning_and_Deep_Learning/blob/master/Module%205%20-%20MLOPs/1.%20Model%20Serialization%20and%20Deserialization/2.%20Text%20Classification/document_classification.ipynb
