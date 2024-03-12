@@ -224,11 +224,11 @@ One-Sample t-test: Tests whether the mean of a single sample is significantly di
 
 
 # Web Application Development
-![Alt text](image\image-8.png)
+![Alt text](image/image-8.png)
 
 
 ### Client Server Architecture/ Request Respose Architecture
-![Alt text](image\image-9.png)
+![Alt text](image/image-9.png)
 
 ### DNS Server
 ```
@@ -265,15 +265,15 @@ in order to communicate and send  data you need one of the protocal.
 
 
 ### Response-Status Code
-![Alt text](image\image-11.png)
+![Alt text](image/image-11.png)
 
-![Alt text](image\image-12.png)
+![Alt text](image/image-12.png)
 
 ### How to make request uisng Python
-![Alt text](image\image-13.png)
+![Alt text](image/image-13.png)
 
 ### Create our own server(Apllication server & DB)
-![Alt text](image\image-14.png)
+![Alt text](image/image-14.png)
 
 ### create virtual environment
 1. __Create__ : python -m venv .env_flask_day_2 
@@ -345,11 +345,11 @@ def index():
          5. Number
          6. more...
 ```
-![Alt text](image\image-15.png)
-![Alt text](image\image-16.png)
+![Alt text](image/image-15.png)
+![Alt text](image/image-16.png)
 
 ```html
-<!DOCTYPE html>
+<!DOCTYPE html/
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -485,7 +485,7 @@ step-by-step
     1. install depedencies
     1. Run the applicaton
 
-![Alt text](image\image-17.png)
+![Alt text](image/image-17.png)
 
 Soluction: Rent a server
 example: opening a pizza store at start
@@ -501,53 +501,53 @@ They provide service in 3 format
 3. PAAS(platform as an service) --> AWS EBS
 
 EBS vs EC2
-![Alt text](image\image-18.png)
+![Alt text](image/image-18.png)
 
 revanth christober
-![alt text](image\image-29.png)
+![alt text](image/image-29.png)
 
 ## Create AWS EC2 Instance
 Step 1: Launch an Instance
-![alt text](image\image-31.png)
+![alt text](image/image-31.png)
 
 Step 2: Name and tags
-![alt text](image\image-32.png)
+![alt text](image/image-32.png)
 
 Step 3: Select OS images
-![alt text](image\image-33.png)
+![alt text](image/image-33.png)
 
 Step 4: instance type
-![alt text](image\image-34.png)
+![alt text](image/image-34.png)
 
 Step 5: key pair; to connect to our local system we need some key. connection type `SCP`, `SSH`.
 `create public private key`
-![alt text](image\image-35.png)
+![alt text](image/image-35.png)
 
-![alt text](image\image-36.png)
+![alt text](image/image-36.png)
 
 Step 6: Click on Launch Instance
-![alt text](image\image-37.png)
+![alt text](image/image-37.png)
 
 Step 7: EC2 instace created
-![alt text](image\image-38.png)
+![alt text](image/image-38.png)
 
 Step 8: go to instance
-![alt text](image\image-39.png) <br>
-![alt text](image\image-40.png) <br>
-![alt text](image\image-41.png) <br>
+![alt text](image/image-39.png) <br>
+![alt text](image/image-40.png) <br>
+![alt text](image/image-41.png) <br>
 
 Step 9: Secure the server, lot of people are comming to my server, and we are allow the person who is coming to my server. 
-![alt text](image\image-42.png)
-![alt text](image\image-43.png)
-![alt text](image\image-44.png)
-![alt text](image\image-45.png)
-![alt text](image\image-46.png)
-![alt text](image\image-47.png)
+![alt text](image/image-42.png)
+![alt text](image/image-43.png)
+![alt text](image/image-44.png)
+![alt text](image/image-45.png)
+![alt text](image/image-46.png)
+![alt text](image/image-47.png)
 
 Step 10: Add this `anywhere` secuity groups on my network interface.
-![alt text](image\image-48.png)
-![alt text](image\image-49.png)
-![alt text](image\image-50.png)
+![alt text](image/image-48.png)
+![alt text](image/image-49.png)
+![alt text](image/image-50.png)
 
 Different services of AWS
 1. **Amazon SageMaker**: it is used to build, train and deploy mechine learning models.
@@ -559,36 +559,34 @@ Different services of AWS
 
 ## Hosting the web app on AWS
 Step 1: Connect to instance
-![alt text](image\image-51.png)
-![alt text](image\image-52.png)
-
+![alt text](image/image-51.png)
+![alt text](image/image-52.png)/
 Step2: Go to app folder and start `CMD`
-![alt text](image\image-53.png)
-![alt text](image\image-54.png)
-
+![alt text](image/image-53.png)
+![alt text](image/image-54.png)/
 Step 3: `SSH` - use the key and enter into server <br>
 `SSH -i 'key' REMOTE_SERVER`
-![alt text](image\image-55.png)
-![alt text](image\image-56.png)
-![alt text](image\image-57.png)
+![alt text](image/image-55.png)
+![alt text](image/image-56.png)
+![alt text](image/image-57.png)
 
 step 4: copy all templates and app file to single folder.
-![alt text](image\image-58.png)
+![alt text](image/image-58.png)
 
 step 5: create dependecy text file
-![alt text](image\image-59.png)
-![alt text](image\image-60.png)
+![alt text](image/image-59.png)
+![alt text](image/image-60.png)
 
 Step 6: Transfer the templates and app. `SCP`: secure copy using key. `no need of transfering 'env' and 'key'` <br>
 `scp -r -i 'key' REMOTE-SERVER:~/`
-![alt text](image\image-28.png)
+![alt text](image/image-28.png)
 __cmd:__ `scp -r -i "flask_deployment_jan_internship_24.pem" webapp ubuntu@ec2-3-83-244-219.compute-1.amazonaws.com:~/`
-![alt text](image\image-62.png)
-![alt text](image\image-63.png)
+![alt text](image/image-62.png)
+![alt text](image/image-63.png)
 
 Step 7 : Login to server and verify the copying. <br>
 __cmd__: `ssh -i "flask_deployment_jan_internship_24_key.pem" ubuntu@ec2-3-83-244-219.compute-1.amazonaws.com`
-![alt text](image\image-64.png)
+![alt text](image/image-64.png)
 
 Step 8: Update OS and install dependency 
 1. `sudo apt update`: download all package
@@ -602,7 +600,7 @@ step 9: Run and test the application
     app.run(host='0.0.0.0', port=5000)
     ```
 2. go to instance and find public ip:
-![alt text](image\image-65.png)
+![alt text](image/image-65.png)
 3. run the program in the background
 no hang-up: 
     - `python3 app.py` : hang-up
