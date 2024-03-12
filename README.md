@@ -485,7 +485,7 @@ step-by-step
     1. install depedencies
     1. Run the applicaton
 
-![Alt text](image\image-17.png)
+![Alt text](image/image-17.png)
 
 Soluction: Rent a server
 example: opening a pizza store at start
@@ -501,10 +501,10 @@ They provide service in 3 format
 3. PAAS(platform as an service) --> AWS EBS
 
 EBS vs EC2
-![Alt text](image\image-18.png)
+![Alt text](image/image-18.png)
 
 revanth christober
-![alt text](image\image-29.png)
+![alt text](image/image-29.png)
 
 ## Create AWS EC2 Instance
 Step 1: Launch an Instance
