@@ -593,8 +593,10 @@ Step 8: Update OS and install dependency
 2. `sudo apt upgrade`: install all package
 3. `sudo apt install python3`: install python3
 4. `sudo apt install python3-pip`: install pip
+5. `pip install -r requirement.txt`: install dependency
 
 step 9: Run and test the application
+`Broadcast application`
 1. fix code 
     ```python
     app.run(host='0.0.0.0', port=5000)
@@ -821,3 +823,197 @@ Step 11: `Pipeline Creation`: STep by step process
    * help Optimze the hyperparmeters tuning workflow
 
 Notebook link: https://github.com/bansalkanav/Machine_Learning_and_Deep_Learning/blob/master/Module%205%20-%20MLOPs/1.%20Model%20Serialization%20and%20Deserialization/2.%20Text%20Classification/document_classification.ipynb
+
+## Hyperparameter Tunning
+
+K-fold
+1. Grid search CV
+1. Randomize search cv
+`Gives multiple model based on multiple configration of same algorith` <br>
+- best model can be consider if it gives me best score for both training and testing.
+
+Amount this model which model you will choose if all the model are giving same accuracy metric
+![alt text](image-11.png)
+Decision based on 
+![alt text](image-12.png)
+- 1. Training Time
+- 2. Model Size
+- 3. Prediction time - `people don't wanted to wait 10m for the output`
+
+Q. What to do if a time is less in one algo and another one consumes less space what to do then? <br>
+`But these considerations will only come into picture provided all the models got after hyperparameter tuning have similar train-test scores, if they don't can we simply prioritize train-test scores?`<br>
+`it depends on the reqs of organisation whether they want to priritise speed or storage, need to find a balance`
+
+## Machine Learning Pipeline
+![alt text](image-13.png)
+![alt text](image-14.png)
+![alt text](image-15.png)
+* if we don't use this pipeline then i will be very bulky and we have to create more then 1000 model with different configration.
+```python
+pipelines = {
+    'knn' : Pipeline([
+        ('scaler', StandardScaler()),
+        ('classifier', KNeighborsClassifier())
+    ]), 
+    'svc' : Pipeline([
+        ('scaler', StandardScaler()),
+        ('classifier', SVC())
+    ]),
+    'logistic_regression': Pipeline([
+        ('scaler', StandardScaler()),
+        ('classifier', LogisticRegression())
+    ]),
+    'random_forest': Pipeline([
+        ('scaler', StandardScaler()),
+        ('classifier', RandomForestClassifier())
+    ]),
+    'decision_tree': Pipeline([
+        ('scaler', StandardScaler()),
+        ('classifier', DecisionTreeClassifier())
+    ]),
+    'naive_bayes': Pipeline([
+        ('scaler', StandardScaler()),
+        ('classifier', GaussianNB())
+    ])
+}
+
+# Define parameter grid for each algorithm
+param_grids = {
+    'knn': [
+        {
+            'scaler': [StandardScaler(), MinMaxScaler()],
+            'classifier__n_neighbors' : [i for i in range(3, 21, 2)], 
+            'classifier__p' : [1, 2, 3]
+        }
+    ],
+    'svc': [
+        {
+            'scaler': [StandardScaler(), MinMaxScaler()],
+            'classifier__kernel' : ['rbf'], 
+            'classifier__C' : [0.1, 0.01, 1, 10, 100]
+        }, 
+        {
+            'scaler': [StandardScaler(), MinMaxScaler()],
+            'classifier__kernel' : ['poly'], 
+            'classifier__degree' : [2, 3, 4, 5], 
+            'classifier__C' : [0.1, 0.01, 1, 10, 100]
+        }, 
+        {
+            'scaler': [StandardScaler(), MinMaxScaler()],
+            'classifier__kernel' : ['linear'], 
+            'classifier__C' : [0.1, 0.01, 1, 10, 100]
+        }
+    ],
+    'logistic_regression': [
+        {
+            'scaler': [StandardScaler(), MinMaxScaler()],
+            'classifier__C': [0.1, 1, 10], 
+            'classifier__penalty': ['l2']
+        }, 
+        {
+            'scaler': [StandardScaler(), MinMaxScaler()],
+            'classifier__C': [0.1, 1, 10], 
+            'classifier__penalty': ['l1'], 
+            'classifier__solver': ['liblinear']
+        }, 
+        {
+            'scaler': [StandardScaler(), MinMaxScaler()],
+            'classifier__C': [0.1, 1, 10], 
+            'classifier__penalty': ['elasticnet'], 
+            'classifier__l1_ratio': [0.4, 0.5, 0.6],
+            'classifier__solver': ['saga']
+        }
+    ],
+    'random_forest': [
+        {
+            'scaler': [StandardScaler(), MinMaxScaler()],
+            'classifier__n_estimators': [50, 100, 200]
+        }
+    ],
+    'decision_tree': [
+        {
+            'scaler': [StandardScaler(), MinMaxScaler()],
+            'classifier__max_depth': [None, 5, 10]
+        }
+    ],
+    'naive_bayes': [
+        {
+            'scaler': [StandardScaler(), MinMaxScaler()]
+        }
+    ]
+}
+
+# Perform GridSearchCV for each algorithm
+best_models = {}
+
+for algo in pipelines.keys():
+    print("*"*10, algo, "*"*10)
+    grid_search = GridSearchCV(estimator=pipelines[algo], 
+                               param_grid=param_grids[algo], 
+                               cv=5, 
+                               scoring='accuracy', 
+                               return_train_score=True,
+                               verbose=1
+                              )
+    
+    %time grid_search.fit(X_train, y_train)
+    
+    best_models[algo] = grid_search.best_estimator_
+    
+    print('Score on Test Data: ', grid_search.score(X_test, y_test))
+```
+
+## Serialization and Deserialization
+![alt text](image-16.png)
+1. Serialization(joblib) - use to save the model
+```python
+# Serialization
+best_model = clf.best_estimator_
+joblib.dump(best_model, 'best_models/demo_model_knn.pkl')
+```
+2. Deserialization - use to make model ready for production
+```python
+# Deserialization
+model = joblib.load('best_models/demo_model_knn.pkl')
+new_data = np.array([[5.1, 3.0, 1.1, 0.1]])
+prediction = model.predict(new_data)
+print("Prediction:", prediction)
+```
+
+## Caching and memoisation
+- help to reduce the training time
+- 10min to 3sec360
+
+## What to do if our model give bad score
+1. Hyperparameter tunning
+2. Change the algo
+3. change the preprocessing
+
+## AI/ML code motive
+1. not reuseable
+1. not scable
+
+## create the API for IRIS flower prediction
+1. Create vene
+2. activate the env
+3. install dependency
+
+Basic configration <br>
+![alt text](image-17.png)
+* show home page
+ ![alt text](image-18.png)
+
+* `to migrate the data from frontend to backend use form`
+![alt text](image-21.png)
+![alt text](image-22.png)
+![alt text](image-23.png)
+![alt text](image-24.png)
+![alt text](image-25.png)
+* `AWS`: put entire things in production  
+![alt text](image-26.png)
+* output
+![alt text](image-27.png)
+
+
+## MLflow library
+* Create the database and
