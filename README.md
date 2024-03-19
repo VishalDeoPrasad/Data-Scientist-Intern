@@ -962,7 +962,7 @@ for algo in pipelines.keys():
     
     print('Score on Test Data: ', grid_search.score(X_test, y_test))
 ```
-
+![alt text](image-29.png)
 ## Serialization and Deserialization
 ![alt text](image-16.png)
 1. Serialization(joblib) - use to save the model
@@ -1017,3 +1017,56 @@ Basic configration <br>
 
 ## MLflow library
 * Create the database and
+
+# Step to solve any NLP problem
+![alt text](image-28.png)
+* 1. Identify the input and output
+* 2. Train and Test Split
+* 3. Initalize a pipeline
+* 4. Initialize the config/hyperparameter grid
+* 5. Apply Grid SearchCV(k-fold)
+
+## Experiment Tracking
+- we have use the pipeline and club to hyperparameter and automation of work flow.
+
+### Tools for experiment tracking
+- `MLflow` - maintaining a track of all the experiments which you are running.
+- manage and reproduce the previous experiment
+### what can we do with mlflow?
+these are the 2 things that mlflow is important
+1. experiment tracking
+2. model management
+
+why?
+1. Organisation/manage
+1. Reproduce previously done experiment
+1. OPtimize
+
+problem
+* To keeping track of experiment data <br>
+
+`Q. why to track experiment?`
+
+`Q. is mlflow only help in experiment tracking only?`
+Ans. No
+
+`Q. is mlflow apply during production or during development?`<br>
+A. During developmnet
+
+`Q. What else you will track?`
+* train time
+* size of model
+* pred time
+![alt text](image-30.png)
+
+### Termonlogyes for MLflow
+1. `Experiment Run`
+1. `Meta-Data`: All the info(which algo was used, which hyperparamet, what was the train time, what was the pred time) to run the experiment
+1. `Artifact`: outcome for an experiment run
+
+### Install MLflow to windows.
+Step 1: `Go to Anaconda Prompt`  <br>
+Step 2: `conda install mlflow`  <br>
+Step 3: `mlflow ui` or `mlflow server --host 127.0.0.1 --port 8080` <br>
+Step 4: `http://127.0.0.1:5000`  <br>
+![alt text](image-31.png)
