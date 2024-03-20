@@ -1037,7 +1037,7 @@ these are the 2 things that mlflow is important
 1. experiment tracking
 2. model management
 
-why?
+why experiment teacking?
 1. Organisation/manage
 1. Reproduce previously done experiment
 1. OPtimize
@@ -1060,9 +1060,16 @@ A. During developmnet
 ![alt text](image-30.png)
 
 ### Termonlogyes for MLflow
-1. `Experiment Run`
-1. `Meta-Data`: All the info(which algo was used, which hyperparamet, what was the train time, what was the pred time) to run the experiment
-1. `Artifact`: outcome for an experiment run
+1. `Experiment Run`:
+    1. `Meta-Data`: All the info(which algo was used, which hyperparamet, what was the train time, what was the pred time) to run the experiment
+        *
+    1. `Artifact`: outcome for an experiment run
+#### Q. If we have best model why we are consern about all the model?
+
+## MLflow
+- using mlflow i'm optimizing work flow
+
+`Pipeline help use to automate the workflow.`
 
 ### Install MLflow to windows.
 Step 1: `Go to Anaconda Prompt`  <br>
@@ -1070,3 +1077,23 @@ Step 2: `conda install mlflow`  <br>
 Step 3: `mlflow ui` or `mlflow server --host 127.0.0.1 --port 8080` <br>
 Step 4: `http://127.0.0.1:5000`  <br>
 ![alt text](image-31.png)
+Step 5: `import mlflow`
+* `mlflow.set_experiment("iris_species_experiment")`
+![alt text](image-32.png)
+Step 6: 
+![alt text](image-33.png)
+Step 7: `All 54 possible outcomes`
+![alt text](image-34.png)
+![alt text](image-35.png)
+Step 8: run another code
+![alt text](image-36.png)
+
+Step 9: more info
+![alt text](image-37.png)
+![alt text](image-38.png)
+
+Step 10: Rename
+![alt text](image-39.png)
+![alt text](image-40.png)
+![alt text](image-41.png)
+![alt text](image-42.png)
