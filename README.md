@@ -1068,6 +1068,8 @@ A. During developmnet
 
 ## MLflow
 - using mlflow i'm optimizing work flow
+- it is available as library
+- it has user interface
 
 `Pipeline help use to automate the workflow.`
 
@@ -1097,3 +1099,28 @@ Step 10: Rename
 ![alt text](image-40.png)
 ![alt text](image-41.png)
 ![alt text](image-42.png)
+
+## Machine Learning piplelline Orchestration
+* `Orchestration: how to manage the workflow is called orchestration` <br>
+* `prefect: Tool to manage the work, or pipeline management` 
+* suppose there is error comming in data load, or during data spliting, if we proper manage the task.
+* we can automats and schedule the task.
+* it is avaible as library and it also have ui.
+
+## Introducing prefect
+* Prefect is an open-source orchestration and observability plateform that devloper to build and scale resilient code quickly, turning their python scripts into resilient, recurring workflows.
+
+## Why prefect
+1. key competitor: Airflow, it is data pipline, used by data engineer.
+1. help us to manage and scheduling the machine learning workflow.
+1. Gives observabilty into failures
+1. if computationly very help, it provide the `native dask framework; it is for paraller computation`. if our ml task is very heavy
+
+### Step us prefect
+1. `python -m venv .env` - Create virtual env
+1. active the env
+1. `pip install prefect` or `pip install -U prefect` or `pip install prefect==2.4`
+1. `prefect version`
+1. `prefect server start` 
+1. go to`http://127.0.0.1:4200`
+![alt text](image-43.png)
