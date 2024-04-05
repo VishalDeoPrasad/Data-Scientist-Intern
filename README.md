@@ -671,7 +671,7 @@ A. if the model is not gernerating better prediction then either data has proble
 
 #### how we will be knowing that it is a bad model.
 not good answer
-1. training score and test score
+1. training score and test score 
 1. low accuracy
 1. high error
 
@@ -1196,5 +1196,7 @@ problem of word2vec: it does take into account the order of word, it is dense
 biggest drawback: train is very slow, computaionlly very expensive, fail to preserve long sentence
 1. __Bert__:
 ![alt text](image-52.png)
+
+----------------------------------------------
 
 
