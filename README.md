@@ -1124,3 +1124,77 @@ Step 10: Rename
 1. `prefect server start` 
 1. go to`http://127.0.0.1:4200`
 ![alt text](image-43.png)
+
+# LLM - Large Language Model
+## Introduction to search engines
+Search Engines : 
+1. __Google__
+2. __Bing__
+3. __DuckDuckGo__
+4. __YouTube__: Relevant Videos
+5. __LinkedIn__: Relevant profile, Job, Post/Article
+6. __NetFlix__: provide you relevant Movies, Series, Documentent
+7. __Bloombarg__: Relevant News
+
+_Input_ : User's Search Query <br>
+_Outcome_ : list of webpages
+
+![alt text](image-44.png)
+Match(_finding the similar documnets_) the user's search query with all the doc's in the database
+
+`Q. How to find the similarity?` <br>
+Ans - here, we are assuming distance to find the similarity between 2 points.
+![alt text](image-45.png)
+
+`Q. Do you know about similarity, what is the way to compute the similarity in computer science and mathematics?` <br>
+Ans - Distance, we can find the similarity using distance. 
+
+`Q. How to find the distance between 2 points?` <br>
+1. Eucledean Distance
+1. Angular Distance
+1. Manhatten Distance
+1. cosine Distance
+1. elavantain Distance
+
+`Q. Which data point are most similary data point in given figure?`<br>
+![alt text](image-46.png)
+Ans - it depends upon what distance metrics you are taking.
+1. As per Eucledean, the closest data point are A and B, and hence AB are most similar.
+
+1. As per Angular Distance and cosine Distance, the angle between AB > CB > AC. hence the most similar in this case will be AC.
+![alt text](image-47.png)
+
+`Q. Why we have these many distance metrics? In high dimentional data are we going to use euclean distance or angular distance metrics?` <br>
+Ans - In `higher Dim` --> Eucledean distance will fail because of `Curse of dimenality`.
+for example, In NLP problem we can not use Eucledean distance, it is recommand to use cosine distance. becuase of BOW/TF-IDF has more then 30k features.
+
+
+
+# Various Vecotrization technique
+1. __BOW__: it is a count based approch. how may time a certain word repeated. it has lot of short comming.
+    * it gives high dimenality.
+    * sparcity is very high in BOW representation of text data. sparcity a lot of zeroes is present.
+1. __TF-IDF__: word importance, if more frequent word less important, less frequent word is more important. need of word important in case of sentiment analysis. 
+common problem
+ * sementic - understand the meaning behind each word
+ * Dim high
+ * high sparse
+ * sequence is not order
+ ![alt text](image-49.png)
+1. __Word2Vec__:(google) preserver the word order or sequence is not order
+ * dim is very low for word2vec compair to BOW/TF-IDF
+ * sparcity is not there
+ * highly dense
+ * it leans the sementic behind all the word.
+ ![alt text](image-50.png)
+![alt text](image-48.png)
+ANN used here to find out the vector
+problem of word2vec: it does take into account the order of word, it is dense
+1. __FastText__: Facebook preserve squential information
+1. __RNN/LSTM/GRU__: generate low dim, highly dense, perserve sementic learning happen, preserver sequence infomration.
+![alt text](image-51.png) 
+biggest drawback: train is very slow, computaionlly very expensive, fail to preserve long sentence
+1. __Bert__:
+![alt text](image-52.png)
+
+
