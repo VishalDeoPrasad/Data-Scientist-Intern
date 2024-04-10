@@ -1168,6 +1168,125 @@ Ans - it depends upon what distance metrics you are taking.
 Ans - In `higher Dim` --> Eucledean distance will fail because of `Curse of dimenality`.
 for example, In NLP problem we can not use Eucledean distance, it is recommand to use cosine distance. becuase of BOW/TF-IDF has more then 30k features.
 
+### Use case; we have given a search query(left) and database(right).
+![alt text](image-44.png)
+`Q. What are we going to apply if a database is given to you?` <br>
+Ans - 1. Clean the given data(lamatization or other), <br>
+2. after clean data apply vectorilzation <br>
+
+`Q. What is the database for google?` <br>
+ Ans - All the available, webpage present on internet is the database for google, such as youtube, blog, articles, etc <br>
+
+ `Q. What is the job the google has to apply in this database?` <br>
+ Ans - Google has to go each and every webpage and apply some cleaning and vectorization on webpage. <br>
+
+ `Q. After cleaning and vectorization store the vectorize data?`
+ Ans - we need special vector stores databases to store high dimensional numerical representation of data.
+ 1. __SQL__: MySQL, Orcale, PostgresSQL, SQlite
+ 2. __NoSQL__: MongoDB, Redish, Casandra
+ 3. __Vector Store DB__: Vector Store are very powerfull to store vectorlize form of data. for example: ChromaDB(open-source free), Pine cone DB(paid)
+
+---------------------------------
+## Search Engine - Building the Frontend and Backend Component
+Two main Component for this project
+1. __Component 1__: Frontend, where people enter the query
+![alt text](image-53.png)
+
+![alt text](image-54.png)
+2. __Component 2__: 
+![alt text](image-55.png)
+    1. __Keyword based serach__: in keyword based search, if we type top 10 laptop then it will only show `top 10 laptop` not the `top 10 computer`, but top 10 computer must also be the query result. because computer and laptop mean the same.
+        - similar query: best laptop, best computer, highly performance laptop etc
+    2. __sementic search__: the above query has the same search query, without any sementic search
+
+#### About the data
+![alt text](image-56.png)
+it contain 80k to 100k subtitle files for movies and tv series, size around the 2GB
+
+#### format of dataset
+![alt text](image-58.png)
+1. Stored the entire data in database file, they don't provide us in the format of .srt or zip file.
+1. encode the file in latin-1 and store it into database, database contain 3 columns, unique _id_ of file, _filename_, and latin-1 encode _content_.
+
+#### Task 1: Our first job with given database
+1. our job is how to read a table from .db & decode all the files stored inside the table.
+1. Do the back engineering and bring the data into .srt format. 
+1. basically decode the data 
+
+#### Task 2: Do some preprocess and clean the data
+`Dialog number, timestamp, dialog`
+![alt text](image-59.png)
+1. remove all dialog number
+1. remove all timestamp
+1. Note: preserve the dialog timestamp
+1. lower case
+1. stopword remover
+1. Stemming/Lamatization
+1. create the dataframe contain, `unique id`,  `filename`, and `clean text`
+![alt text](image-62.png)
+#### to build a keyword based search engine we can use following verization method.
+1. BOW
+1. TF-IDF
+and expriment amoung both the technique and find out which technique is giving best result.
+note: tokenization is totally based on the what kind of vectorization we are using
+![alt text](image-60.png)
+
+#### Task 3: do the preporcess in query
+![alt text](image-63.png)
+1. clean the data
+1. apply transformation
+
+#### Task 4: apply cosine similarity with query and each row in the preprocess data.
+![alt text](image-64.png)
+It return the result of cosine, short them in decreasing order. this is example of keybased search engine because we are using here BOW, IF-IDF.
+
+`If we use the W2V/BERT vectrization then it become sementic search engine`
+`Q. what is the problem of BOW/TF-IDF?` <br>
+Ans - BOW/IF-IDF has very high dimentionality, in simple term BOW/IF-IDF capture each and every keyword, but this huge dimenality come a problem also at the same time we are not preserving the meaning of the word or sementic similarity. where will i go if i wanted to preserv the meaning? it will replace it with word2vec
+
+`Q. problem with word2vec?`<br>
+word2vec create lower dimentation vecotor representation, what will happen to a very large document, do you think the context or main sence of document get lost. if our document contain 10k and it gives 300 vector represenation, do you think it lost some information the entire subtile meaning get lost if we try to capture all the information in 300 dimention. it will loss whole sence if i will caputure each and everything in 300 dimention.
+- even bart and transformer have the same issue but how to solve it. 
+
+conculsion:
+for the sementic search engine, we have to use word2vec bart kind of technique. but to bart and word2vec what is the outcome, the outcome will be lower dimention may be 300 or 500 dimensional. because in Bert or word2vec the compression is going to happen. we are compressing way to much.
+- `what too much compression what we will loss?` information get loss. in a bigger documentation, a bigger subtitle file definitely the meaning or the contect or the main part of the document can get lost with that compression.
+- even LSTM and RNN have the same problem of exploding gradinent or vanishing gradient
+-------------------------------
+### Summary
+Component 2:
+1. Data Clearning
+2. Vectorization
+
+Component 1:
+1. Query Clean
+1. Vector of query
+1. similarity calculation between query vs all the docs. it is like KNN
+1. Reorder the search results based on similaity score
+
+`Q. what will be the dimenstion if we apply BOW/IF-IDF on 82k .srt data?` <br>
+Ans - ![alt text](image-65.png)
+dim = 82k * d, where d is number of unique vocab words
+
+disadvantage of BOW/TF-IDF
+1. high dim
+1. highly sparased
+1. no semantic info preserv
+
+advantage of w2v
+1. low dim
+1. Dense Representation not sparased
+1. sementic info preserver, it understand computer and laptop is same.
+
+#### Embedding
+Embedding is nothing but a lower dimenation dense representation of text data. dense representation is typicallly called embedding.
+
+#### Numerical vector
+numerical vector is it can be sparse or desnse represenation. but dense represenation is typally called enbedding.
+
+![alt text](image-66.png)
+
+
 
 
 # Various Vecotrization technique
