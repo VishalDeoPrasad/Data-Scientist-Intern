@@ -1191,7 +1191,6 @@ Ans - 1. Clean the given data(lamatization or other), <br>
 Two main Component for this project
 1. __Component 1__: Frontend, where people enter the query
 ![alt text](image-53.png)
-
 ![alt text](image-54.png)
 2. __Component 2__: 
 ![alt text](image-55.png)
@@ -1250,7 +1249,7 @@ word2vec create lower dimentation vecotor representation, what will happen to a 
 
 conculsion:
 for the sementic search engine, we have to use word2vec bart kind of technique. but to bart and word2vec what is the outcome, the outcome will be lower dimention may be 300 or 500 dimensional. because in Bert or word2vec the compression is going to happen. we are compressing way to much.
-- `what too much compression what we will loss?` information get loss. in a bigger documentation, a bigger subtitle file definitely the meaning or the contect or the main part of the document can get lost with that compression.
+- `what too much compression what we will loss?`  information get loss. in a bigger documentation, a bigger subtitle file definitely the meaning or the contect or the main part of the document can get lost with that compression.
 - even LSTM and RNN have the same problem of exploding gradinent or vanishing gradient
 -------------------------------
 ### Summary
@@ -1284,6 +1283,14 @@ Embedding is nothing but a lower dimenation dense representation of text data. d
 #### Numerical vector
 numerical vector is it can be sparse or desnse represenation. but dense represenation is typally called enbedding.
 
+#### BOW/TF-IDF vs w2v
+BOW/TF-IDF takes each word as a unique dimention. but w2v do the same, it will take each document and try to give smaller represenation a dense representation the dimenstion of these representation is very low, dimenstion low mean may be you capture less information.
+`Note: BOW/TF-IDF is definitly preseve information but it comes at a cost and the cost is high dimenation and sparase represenation but in w2v it has less dimenation and you end up with lossing information.`
+
+`Q. How do we solve this problem?`
+Ans - BERT: Use transformer to solve this issue
+
+### Task: Find the movie name based on famour dialog provided in search query.
 ![alt text](image-66.png)
 
 
