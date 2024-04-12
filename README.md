@@ -1287,8 +1287,22 @@ numerical vector is it can be sparse or desnse represenation. but dense represen
 BOW/TF-IDF takes each word as a unique dimention. but w2v do the same, it will take each document and try to give smaller represenation a dense representation the dimenstion of these representation is very low, dimenstion low mean may be you capture less information.
 `Note: BOW/TF-IDF is definitly preseve information but it comes at a cost and the cost is high dimenation and sparase represenation but in w2v it has less dimenation and you end up with lossing information.`
 
-`Q. How do we solve this problem?`
+`Q. How do we solve this problem?` <br>
 Ans - BERT: Use transformer to solve this issue
+
+`Q. If we use W2V then it will convert the higher dim data into lower dimentational represenation, which result in loss of information gain. How to preserve this?` <br>
+Ans - Use Chunking of data, form one data point make multiple files using chunking, it will explode the number of rows and we end end getting very large database, 82k row converted into 820k rows, then apply W2V/BERT.
+![alt text](image-67.png)
+steps:
+1. do transformation on query
+2. find out cosine similarity to each 820k rows of data.
+
+### Document Chunker
+Divide a large documnet into smaller, more managable chunks for embedding.
+
+### Overlapping windows
+![alt text](image-68.png)
+![alt text](image-69.png)
 
 ### Task: Find the movie name based on famour dialog provided in search query.
 ![alt text](image-66.png)
@@ -1297,6 +1311,7 @@ Ans - BERT: Use transformer to solve this issue
 
 
 # Various Vecotrization technique
+https://github.com/bansalkanav/Machine_Learning_and_Deep_Learning/tree/master/Module%204%20-%20Machine%20Learning/02.%20Working%20with%20Text%20Data/1.%20Intro%20to%20Text%20Preprocessing
 1. __BOW__: it is a count based approch. how may time a certain word repeated. it has lot of short comming.
     * it gives high dimenality.
     * sparcity is very high in BOW representation of text data. sparcity a lot of zeroes is present.
@@ -1307,7 +1322,7 @@ common problem
  * high sparse
  * sequence is not order
  ![alt text](image-49.png)
-1. __Word2Vec__:(google) preserver the word order or sequence is not order
+3. __Word2Vec__:(google) preserver the word order or sequence is not order
  * dim is very low for word2vec compair to BOW/TF-IDF
  * sparcity is not there
  * highly dense
@@ -1316,11 +1331,11 @@ common problem
 ![alt text](image-48.png)
 ANN used here to find out the vector
 problem of word2vec: it does take into account the order of word, it is dense
-1. __FastText__: Facebook preserve squential information
-1. __RNN/LSTM/GRU__: generate low dim, highly dense, perserve sementic learning happen, preserver sequence infomration.
+4. __FastText__: Facebook preserve squential information
+5. __RNN/LSTM/GRU__: generate low dim, highly dense, perserve sementic learning happen, preserver sequence infomration.
 ![alt text](image-51.png) 
 biggest drawback: train is very slow, computaionlly very expensive, fail to preserve long sentence
-1. __Bert__:
+6. __Bert__:
 ![alt text](image-52.png)
 
 ----------------------------------------------
