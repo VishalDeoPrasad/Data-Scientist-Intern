@@ -1351,5 +1351,94 @@ biggest drawback: train is very slow, computaionlly very expensive, fail to pres
 ![alt text](image-70.png)
 ![alt text](image-71.png)
 
+https://github.com/bansalkanav/Machine_Learning_and_Deep_Learning/tree/master/Module%209%20-%20GenAI%20(LLMs%20and%20Prompt%20Engineering)/1.%20Text%20Embeddings
+
 `Semantic Represenation: W2V, Glove, FastText` <br>
-give a text data to an algorith
+give a text data to an algorith at word2vec model generated. How can you generate?
+1. CBOW
+2. SkipGram
+3. SkipGram with negataive sampling 
+which allow us to generate w2v model. what this word2vec learn? it will learn simply semantic represenation of text data.
+
+### Difference Between semantic represenation and contextual representation
+The Technique that used in contextual represenation is called BERT. BERT not only learn contextual represenation but also learn the sementic represenation. <br>
+where as  w2v, glove, fastText only learn semantic represenation not contextual represenation.
+![alt text](image-72.png)
+based on context anaconda, python is tools or animal, same goes to amazon it is forest or company.
+![alt text](image-73.png)
+based on the context of the word same word get __differnt numerical represenation__. <br>
+W2V, glove, fastText all of them give signal represenation of data but BART give differnt numeric represenation beased on context of the data.
+__Hyperparameter of Bert__: how far we should go to find the context of the word.
+![alt text](image-74.png)
+__Anaconda__, __Amazon__, __Anaconda__, __Python__
+
+`Note: One word can have multiple meanings. This meaning can be represenated by looking at the near by words of context` this is called contextural represenatation. BERT & ELMO can do contextural represenation. Before BERT ELMO are used to do the contextural represenation.
+
+
+`Q. Why does word order os not preserved in ANN?` <br>
+Ans - ANN are not preserver the sequential information, there is problem with the architecute there is no problem with the technique.
+
+`Q. How to resolve the problem, can i replace this architcure with something else?`
+Ans - Yes, we can simply use some that takes word order in considration, which is RNN, LSTM, GRU. if we take such model that it preserve the word order or sequential information.
+
+`Note: The output of ANN is W2V, Glove and FastText` <br>
+`Note: The output of LSTM is ELMO, with LSTM we can generate the model like ELMO. also there are 2 major problem`
+
+`Q. What is the problem if we change ANN to RNN?` <br>
+Ans - Problem 1: <br>
+there is `problem of long term dependency`, which algo solve the problem the long term dependency. LSTM is use to handle the long term dependency, but it can not handle all the long term dependency. it can not handle very long sequence. <br>
+__LSRM__, __GRU__ fails if the squences become extremly long. __exploading gradient__ and __vanishing gradient problem__ will be there.
+
+Problem 2: <Br>
+The Second problem with LSTM, GRU approch is they process every single token at time, one token at a time. if we have 2 billion token, is it really a good idea to process 1 token at a time? `NO`.
+it is very slow process `RNN`, `LSTM`, and `GRU` process 1 token at a time that is why it is very very slow process.
+
+in simple term since we are learning sequencal dependency that what happend the sequence is process one token at time.
+
+`Q. What is the next arthitecure to solve this 2 major problem?`
+1. problem of long term dependency
+1. problem of slow process of each token <br>
+Ans - Next neural network articheture that help to prevent this issue is `Transformer articeture`.
+
+`Q. What is the model given by the transformer architecure?` <br>
+Ans - A transformer architecture that is a neural network architecure it gives the model which is called `BERT`.
+
+### Benfit of Transformer Architecure
+1. it don't have long term dependency
+2. it is hightly scaler, highly parallel or highly flexible which is no problem of slow tranning. it is very fast tranning.
+
+`Q. How tranning time is reduce in Transformer?`
+Ans - because of parallel architecure of transformer the tranning time has reduce considiabily because of that only we have really good machine learning model which is called BERT and GPTs out there.<br>
+because of parallel artichure what happend the time taken to train is reduce very significtly.
+
+`Q. Can LSTM train prallely?` <br>
+Ans - No, they are sequential artichtures. Transformer can train parallely.
+
+`Q. Can ELMO architecure is train using LSTM?` <br>
+Ans - YES, ELMO architecure is trained using LSTM Architecture.
+
+### Different methods to understand the meaning of word
+1. __Contextural Representation__: One word can have multiple meanings. This meaning can be represented by looking at the nearby words or context.
+2. __Attention__: In order to understand the meaning we don't need to look at all the surrounding words. just by focusing on few important words we can understand more about each word.
+
+### All Vectorization Technique
+![alt text](image-75.png)
+W2V, Glove, FastText: out of this FastText take care of `out of vecuballary word. but it don't preserver the sequential information.
+
+`Q. How to W2V trained? Give me technique`
+Ans - 
+1. CBOW
+1. SkipGram
+1. SkipGram with negative smapling
+
+`Q. what is the algorithm used in W2V, Glove and FastText?` <br>
+Ans - Algorithm is used is ANN, they use sallow artifical neural network to train this algorithm.
+
+`Q. what we will change in above algorithm to preserve the sequence infomation?` <br>
+Ans - Just change the architecture from ANN to (RNN, LSTM, GRU) to preserve the sequence information also.
+
+`Q. is there any architecure build to solve the Out Of Vacabually(OOV) and Contextual embeddings?` <br>
+Ans - ELMO, ELMO use LSTM internally and because of LSTM what happen it is `not parallel process` and it does not take care of `long term dependency`.
+
+`Q. Which algo wins?`
+Ans - Transformer Architecture(BERT)
