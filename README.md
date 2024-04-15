@@ -1340,4 +1340,16 @@ biggest drawback: train is very slow, computaionlly very expensive, fail to pres
 
 ----------------------------------------------
 
+# Distributed and Contextual Representation (BERT)
+1. Introduction to GenAI
+1. Transformers
+1. LLMs
+1. Prompt Eng
+1. Openai & HuggingFace
+1. __Langchain__: help to build gen AI backend application, __Flask__: to build web apps
 
+![alt text](image-70.png)
+![alt text](image-71.png)
+
+`Semantic Represenation: W2V, Glove, FastText` <br>
+give a text data to an algorith
