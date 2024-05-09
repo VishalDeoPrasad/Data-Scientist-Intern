@@ -1442,3 +1442,93 @@ Ans - ELMO, ELMO use LSTM internally and because of LSTM what happen it is `not 
 
 `Q. Which algo wins?`
 Ans - Transformer Architecture(BERT)
+
+# GenAI
+![alt text](image-76.png)
+`Q. what is Contextural represenation?`<br>
+![alt text](image-72.png)
+Ans - Contextural Represenation means one word can have multiple meaning based upon the context in which the word is used.
+
+`Q. What is Distributed Representation?` <br>
+Ans - Distributed Representation is nothing but dense represenation and low dimentational represenation of text data. earler approch they use very high dimentation and sparse, discributed representation is comes up with low dimentation and dense represenation of text data.
+
+`Q. What is the example of Distributed represenatiation?` <br>
+Ans - Word2Vec, Glove, FastText
+![alt text](image-77.png)
+
+`Q. what are Arichitecture and technique used by w2v?` <br>
+Ans - __Arichitecture__: Shallow ANN <br>
+__Technique used__: CBOW, SkipGram, SkipGram with negative sampling.
+
+`Q. What are Architecture and technique used by ELMO?` <br>
+Ans - __Architecture__: Bi-directional LSTM, it is not basic LSTM, LSTM which look into forward as well as backward direction, word sequence is learn in both the ways.<br>
+__Techinque__: Language Modeling
+
+`Q. Why we use Bi-directional LSTM?` <br>
+Ans - it is not good idea to find the context using only one direction, both forward and backword word sequence is require to find the contect of a word.
+
+`Q. Why ELMO(Embedding from Language Modeling) is bi-directional contextual represenation?`
+Ans - Because it used Bi-direction LSTM
+
+`Q. What is Long Term Dependencies` <br>
+![alt text](image-78.png)
+Ans - in order to find the word journey you have to see long back and then find the meaning.
+
+`Q. Why RNN do not work for the longer sequences?` <br>
+Ans - It depends upon multiple things
+1. RNN/LSTM has vanishing gradient problem and exploding gradient problem. if you go very far from the sequence the gradient you trying to learn it will vanish itself.
+1. And there is exploding gradient problem which makes RNN very unstable.
+
+`Q. Which model can handle Long Term Dependency?` <br>
+Ans - BERT: Bi-direction Encoder Representation form Transformer.
+
+
+`Q. How BERT handle the Long Term Dependency?` <br>
+Ans - Because of Architecture change, `transformer` is the Architecture for BERT, and technique used in BERT is `Language Model`. <br>
+* the main difference is that BERT simply discared the Bi-LSTM with transformer.
+* BERT take care of Long Term dependency because Transformer has very nice concept internally inbuild which is called attention machanism and because of this Attention machanism inbuild in Transformer it take care of long term dependency.
+
+`Q. How does BERT handle the slow learning?` <br>
+Ans - Slow learning get handle in BERT because Transformer can be parallel train they are scalable and flexible architecture and they work very well with GPU's and TPU's. <br>
+`Scalable`: Scalable means they didn't train the BERT in single machine they scale the training in multiple machine to train the BERT.
+
+`Q. What are the approches used in BERT?` <br>
+Ans - Masked LM(language Modeling) & NSP(Next sentence prediction)
+![alt text](image-79.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Introduction to Prompt Engineering
+Promt Engineering
+1. Write clear Instruction
+2. Few-Shot Learning
+3. Output Structure
+4. Prompt Personas
+
+Library
+1. openai by OpenAI
+    * LLM --> GPT: Not opensource pay as you go
+    * DALLE --> Takes Text to generate Image
+    * SORA --> Text to Video
+    * Whipes --> Takes Audio to gernerate transcript(text)
+2. huggingface by HuggingFace
+    * LLM - other GenAI Model, it is opensource like github page
+3. Gemini by Google
+4. LLAMA by Meta
+5. Copilot by Microsoft
+All OpenAI, HuggingFace, Google, Meta, Microsoft they all have LLM.
+
+### Conversational AI Applications
+1. ChatGPT(3.5, 4.0) 
+1. Gemini
+1. Copilot
